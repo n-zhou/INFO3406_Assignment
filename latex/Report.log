@@ -1,0 +1,59 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=latex 2018.8.27)  27 AUG 2018 16:29
+entering extended mode
+**./Report.tex
+(Report.tex
+LaTeX2e <2017-04-15>
+Babel <3.15> and hyphenation patterns for 76 language(s) loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (Report.aux)
+\openout1 = `Report.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 14.
+
+[1
+
+] (Report.toc)
+\tf@toc=\write3
+\openout3 = `Report.toc'.
+
+ [1] [2] (Report.aux) ) 
+Here is how much of TeX's memory you used:
+ 221 strings out of 493309
+ 2774 string characters out of 3138794
+ 54786 words of memory out of 3000000
+ 3850 multiletter control sequences out of 15000+200000
+ 6063 words of font info for 22 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 22i,6n,19p,158b,205s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on Report.dvi (3 pages, 1532 bytes).
