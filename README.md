@@ -1,4 +1,4 @@
-# INF3404_Assignment
+# INFO3404_Assignment
 
 ## Stage 1
 
