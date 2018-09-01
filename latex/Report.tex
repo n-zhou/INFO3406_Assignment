@@ -1,5 +1,7 @@
 \documentclass[12pt,a4paper]{article}
 
+% we use this for strike through text that is going to be removed in the final report
+\usepackage{soul}
 \renewcommand{\baselinestretch}{1.15}
 
 \newcommand{\bigsize}{\fontsize{35pt}{20pt}\selectfont}
@@ -19,16 +21,34 @@
     \pagebreak
 
     \section{Section 1: Problem}
-    In this section we describe the problem from a general perspective. \
-    We will list the research question(s) that we will answer in stage 2.
+    The results of the 2016 Presidential elections came as surprise to the whole world. The candidate Hillary Clinton \
+    was ahead in the polls throughout the whole election cycle. Yet when November 8 came the victor was none other than\
+    Donald J. Trump. The problem that we are trying to identify is where everyone went wrong in their predictions.
+    \newline \newline
+    The questions we will be answering in Stage 2 are:
+
+    \begin{enumerate}
+        \item What are the factors that will lead to victories in US elections?
+        \item How accurate is polling data in terms of predicting the winner of an election?
+        \item How can extraordinary events affect a candidate's chances of winning?
+        \item Which candidates will most likely win in the 2018 US Midterm elections?
+    \end{enumerate}
 
     \section{Section 2: Approach}
     In this section we will describe the approach we will be taking to solving the problem and any requirements. This is our plan for stage 2.
 
     \section{Section 3: Data}
-    Linzi does some magical shit and carries us.
 
+    The data was acquired from \st{https://github.com/mdeff/fma} https://www.kaggle.com/.
+    \newline \newline
+    The tools we used were:
+
+    \begin{itemize}
+        \item python
+        \item weka
+        \item SPSS
+    \end{itemize}
     \appendix
-    \section{something goes here}
-    Not really sure what though.
+    \section{}
+    Not really sure what though. Probably an appendix.
 \end{document}
