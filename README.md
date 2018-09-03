@@ -1,4 +1,4 @@
-# INFO3404_Assignment
+# INFO3406_Assignment
 
 ## Stage 1
 The objective of this stage is to explore a data set and define a research question based on a research/business requirement. The Activities include:
