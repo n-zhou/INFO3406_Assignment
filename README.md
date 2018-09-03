@@ -21,3 +21,6 @@ The report for Stage 1 consists of three sections. Problem, Approach and Data. I
 * Describe any exploratory analysis we have done to refine our understanding of the data and research question. One or two supporting figures would be great.
 * Describe any data preparation eg. transformation, sampling, cleaning.
 * Which tools did we use to clean and explore the data set?
+
+## Stage 2
+TBD
