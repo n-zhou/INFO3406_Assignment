@@ -24,3 +24,6 @@ The report for Stage 1 consists of three sections. Problem, Approach and Data. I
 
 ## Stage 2
 TBD
+
+## Stage 3
+TBD
