@@ -1,5 +1,6 @@
 \documentclass[12pt,a4paper]{article}
 
+\usepackage[toc,page]{appendix}
 \renewcommand{\baselinestretch}{1.15}
 
 \newcommand{\bigsize}{\fontsize{35pt}{20pt}\selectfont}
@@ -49,6 +50,15 @@
         \item Github
         \item weka
     \end{itemize}
-    The Python programming language was used to clean the data.
-    \appendix
+    The Python programming language was used to clean the data. The tables were createad using a combination \
+    of pgAdmin4; to create the tables and psql; to copy the data from the CSV files into the tables. The data \
+    from the lexicon dataset did not readily come in CSV form.  As such python was used to clean the data and load\
+    it onto the our database.
+
+    \begin{appendices}
+        \section{Graphs}
+        Figures of graphs are going to go here.
+        \section{Something else}
+        Things that are not graphs will go here.
+    \end{appendices}
 \end{document}
