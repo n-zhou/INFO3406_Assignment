@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=latex 2018.8.23)  1 SEP 2018 23:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=latex 2018.8.27)  6 SEP 2018 14:29
 entering extended mode
 **./Report.tex
 (Report.tex
@@ -20,53 +20,41 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\soul\soul.sty"
-Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
-\SOUL@word=\toks14
-\SOUL@lasttoken=\toks15
-\SOUL@cmds=\toks16
-\SOUL@buffer=\toks17
-\SOUL@token=\toks18
-\SOUL@spaceskip=\skip43
-\SOUL@ttwidth=\dimen103
-\SOUL@uldp=\dimen104
-\SOUL@ulht=\dimen105
 ) (Report.aux)
 \openout1 = `Report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 16.
+(Font)              <14.4> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 16.
- [1
+(Font)              <7> on input line 14.
 
-]
-(Report.toc)
+[1
+
+] (Report.toc)
 \tf@toc=\write3
 \openout3 = `Report.toc'.
 
  [1]
-Underfull \hbox (badness 10000) in paragraph at lines 24--29
+Underfull \hbox (badness 10000) in paragraph at lines 22--27
 
  []
 
 
-Overfull \hbox (47.87878pt too wide) in paragraph at lines 41--44
-\OT1/cmr/m/n/12 The data was ac-quired from []https://github.com/mdeff/fma http
-s://www.kaggle.com/. 
+Overfull \hbox (62.29254pt too wide) in paragraph at lines 41--44
+\OT1/cmr/m/n/12 The data was ac-quired for the lex-i-cons from http://saifmoham
+mad.com/WebPages/NRC-
  []
 
 
@@ -82,12 +70,12 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 46.
  [2] (Report.aux) ) 
 Here is how much of TeX's memory you used:
- 411 strings out of 493309
- 4950 string characters out of 3138794
- 57894 words of memory out of 3000000
- 4031 multiletter control sequences out of 15000+200000
- 6633 words of font info for 24 fonts, out of 3000000 for 9000
+ 239 strings out of 493309
+ 2845 string characters out of 3138794
+ 56786 words of memory out of 3000000
+ 3865 multiletter control sequences out of 15000+200000
+ 6320 words of font info for 23 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 22i,6n,19p,158b,205s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 22i,6n,19p,156b,205s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Report.dvi (3 pages, 2324 bytes).
+Output written on Report.dvi (3 pages, 2432 bytes).
