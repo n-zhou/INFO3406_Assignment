@@ -1,6 +1,7 @@
 \documentclass[12pt,a4paper]{article}
 
-\usepackage[left=2cm, right=2cm, top=2cm]{geometry}
+% package for making the margins thinner
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
 
 % I don't recall what this package was for
 \usepackage[toc,page]{appendix}
@@ -14,9 +15,9 @@
 \begin{document}
 \begin{titlepage}
     \title{INFO3406 Project Stage 1}
-    \author{Zhu Linzi\\
+    \author{Linzi Zhu\\
             \and
-            Zhou Nic
+            Nick Zhou
     }
     \date{September 2018}
     \maketitle
@@ -46,16 +47,18 @@
 
     \section{Section 3: Data}
 
-    The data was acquired for the lexicons from http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm. The da
+    The data was acquired for the lexicons from http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm. The data for the \
+    movie title and ratings was acquired from https://data.world/data-society/imdb-5000-movie-dataset. The lexicon dataset did \
+    not come in in a fully consistent format. In most cases, the data from the lexicon dataset was in a space separated format however there \
+    were also some files that contained data in a "<key><attribute><space>..." format. A python program was used to transform the data \
+    in a CSV file format. The dataset for the movies came readily available in a CSV format.
     \newline \newline
     The tools we used were:
 
     \begin{itemize}
         \item python
         \item pgAdmin4
-        \item SPSS
         \item Github
-        \item weka
     \end{itemize}
     The Python programming language was used to clean the data. The tables were createad using a combination \
     of pgAdmin4; to create the tables and psql; to copy the data from the CSV files into the tables. The data \
