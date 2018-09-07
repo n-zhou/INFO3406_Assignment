@@ -1,7 +1,14 @@
 \documentclass[12pt,a4paper]{article}
 
+\usepackage[left=2cm, right=2cm, top=2cm]{geometry}
+
+% I don't recall what this package was for
 \usepackage[toc,page]{appendix}
+
 \renewcommand{\baselinestretch}{1.15}
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+
 
 \newcommand{\bigsize}{\fontsize{35pt}{20pt}\selectfont}
 \begin{document}
@@ -54,6 +61,10 @@
     of pgAdmin4; to create the tables and psql; to copy the data from the CSV files into the tables. The data \
     from the lexicon dataset did not readily come in CSV form.  As such python was used to clean the data and load\
     it onto the our database.
+
+    \centering
+    \includegraphics[scale=0.8]{Movie_titles_by_vad}
+    Here we have a graph
 
     \begin{appendices}
         \section{Graphs}
