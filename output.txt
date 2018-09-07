@@ -1,0 +1,3 @@
+Valence | max: 1.000000 | min: 0.015000 | standard deviation: 0.197371
+arousal | max: 0.971000 | min: 0.115000 | standard deviation: 0.155122
+dominance | max: 0.966000 | min: 0.141000 | standard deviation: 0.138347
