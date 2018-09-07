@@ -29,7 +29,7 @@
     \pagebreak
 
     \section{Section 1: Problem}
-    Deciding on a name is often one of the difficult parts of any project, and for good reason. \
+    What's in a name? Deciding on a name is often one of the difficult parts of any project, and for good reason. \
     The title is often the first thing any prospective member of your audience will interact \
     with before engagement, and as such everyone wants to pick the best one. Many names, particularly \
     in media, aren't constructed of whole cloth, but are formed from existing English words. And \
@@ -46,8 +46,19 @@
     \end{enumerate}
 
     \section{Section 2: Approach}
-    The approach we are going to be taking in Stage 2 is performing statistical analysis on our dataset. We will attempt to \
-    answer the questions we set out by doing explaratory factor analysis and t-tests.
+    In order to answer this question, we require only
+    
+    \n
+    \begin{itemize}
+    \item A large list of English movie titles
+    \item Their corresponding box office revenues
+    \item A large list of English unigrams
+    \item Their corresponding PAD emotional scores.
+    \end{itemize}
+    
+    \n
+
+In order to investigate a link, we will perform Exploratory Factor Analysis in order to test the affect that strong PAD scores has on a film's eventual revenue. If such a link is established, we will use regression modelling to train a predictor to test further possible titles.
 
     \section{Section 3: Data}
 
