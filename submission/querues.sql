@@ -13,3 +13,10 @@ INNER JOIN nrc_emotion
 on to_tsvector(title) @@ to_tsquery(word)
 GROUP BY movies.movieid
 ORDER BY movieid ASC;
+
+SELECT title,
+AVG(valence), AVG(arousal), AVG(dominance)
+from movies
+INNER JOIN (select * from vad where word NOT LIKE '% %') as vad_clean
+on to_tsvector(title) @@ to_tsquery(word)
+GROUP BY title
