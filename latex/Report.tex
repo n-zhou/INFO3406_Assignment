@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 
 % package for making the margins thinner
 \usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
@@ -11,33 +11,37 @@
 \graphicspath{{./images/}}
 
 
-\newcommand{\bigsize}{\fontsize{35pt}{20pt}\selectfont}
+%\newcommand{\bigsize}{\fontsize{35pt}{20pt}\selectfont}
 \begin{document}
 \begin{titlepage}
     \title{INFO3406 Project Stage 1}
-    \author{Linzi Zhu\\
+    \author{Linzi Zhu(460381996)\\
             \and
-            Nick Zhou
+            Nick Zhou(460363707)
     }
     \date{September 2018}
     \maketitle
 \end{titlepage}
-
-    \pagebreak
-    \tableofcontents
+    \begin{tableofcontents}
+        \centering
+        \tableofcontents
+    \end{tableofcontents}
     \pagebreak
 
     \section{Section 1: Problem}
-    Words convey emotions, feelings and attitude. Different words convey these affects to varying degrees. \
-    The problem this project is aiming to solve is seeing if there is a link between titles of Movies and \
-    how succesful they are.
-    \newline \newline
-    The questions we will be answering in Stage 2 are:
+    Deciding on a name is often one of the difficult parts of any project, and for good reason. \
+    The title is often the first thing any prospective member of your audience will interact \
+    with before engagement, and as such everyone wants to pick the best one. Many names, particularly \
+    in media, aren't constructed of whole cloth, but are formed from existing English words. And \
+    these words have power, conveying emotions, feelings and attitudes - to varying degrees. Using \
+    the PAD Emotional framework, it's possible to quantify exactly how much power each of the \
+    constituent words in a title have. Combining this with existing movie data, it's possible \
+    to classify the predicted emotional response to any given movie's title. Thus this project \
+    aims to explore the extent to which a good name affects a movies box office ratings, specifically -
 
     \begin{enumerate}
-        \item Is there are link between the intensities of a lexicon being used in the title of a movie and the critical acclaim?
-        \item Is there a link between movie titles and movie success based on the emotion the leixon used in their title is aiming \
-        to convey?
+        \item Is there a link between the emotional response a movie's title evokes (sight unseen) and the movies eventual gross revenue?
+        \item Using these models, can we train a predictor to assess the value of a title for any given movie?
 
     \end{enumerate}
 
@@ -48,7 +52,7 @@
     \section{Section 3: Data}
 
     For this dataset we combined 2 larger datasets, while trimming some extraneous information not relevant to this report. A 2011 report from the National Research Council Canada on Word-Emotion Association Lexicon - acquired from https://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm, and the IMDB5000 movie dataset, listing a huge amount of metadata related to 5000 select movies - acquired from https://github.com/Godoy/imdb-5000-movie-dataset
-
+    \newline \newline
     The Word-Emotion Association Lexicon was originally compiled by asking volunteers on Amazon's Mechanical Turk to rate a series of words, the total of which were analysed and compiled into the report by the NRC. In particular, we used the word to Valence, Arousal and Dominance report, which takes a large number of English unigrams and assigns to each a value from 0 to 1 for valence, arousal and dominance. In order -
 
     \begin{itemize}
@@ -58,14 +62,12 @@
     \end{itemize}
 
     The IMDB5000 is essentially a scrape of the IMDB database, the stats for which are all user compiled, like Wikipedia.
-
-    In our report, we take a combination of these statistics. Firstly, the titles of the films in question, stored as strings. Then the gross revenue of the film as described my IMDB, stored as an integer. Finally, we took an average of each of the valence, arousal and dominance values of each word in the corresponding titles, represented as a real number from 0-1.
-
-    We believe that using the VAD model we can analyse the effect that the emotional response the average person has to the title of a movie has on the film's final gross revenue.
-
     \newline \newline
-
-    \heading{tools}
+    In our report, we take a combination of these statistics. Firstly, the titles of the films in question, stored as strings. Then the gross revenue of the film as described my IMDB, stored as an integer. Finally, we took an average of each of the valence, arousal and dominance values of each word in the corresponding titles, represented as a real number from 0-1.
+    \newline \newline
+    We believe that using the VAD model we can analyse the effect that the emotional response the average person has to the title of a movie has on the film's final gross revenue.
+    \newline \newline
+    %\heading{tools}
     The tools we used were:
 
     \begin{itemize}
@@ -74,23 +76,34 @@
         \item SPSS
         \item Microsoft Excel
     \end{itemize}
-
-    \heading{cleaning}
+    %\heading{cleaning}
 
     We began by cleaning to data for our purposes. The Lexicon data was divided into several different breakdowns, of which the Word by VAD report was of most interest to us, using real numbers (the other interesting report used Word by Affectation and Emotion, but used a boolean measure which proved non-useful for our purposes). This was formatted as a tab separated .txt file, so by porting it into Microsoft Excel, we exported the file as a CSV, ready to load into pgAdmin4.
-
+    \newline \newline
     On the other hand, the IMDB5000 data had many, many more fields than necessary, including such information as 'Whether the movie was in colour or black and white' and 'How many faces were on the movie poster'. Already in .csv format, we loaded the data in Excel and manually removed all fields except title, language and gross. Then we removed all non-english films, so as not to throw off the lexical analysis by including films with english homographs (for instance, "Shin seiki Evangerion" includes the english word 'shin', but means 'new' in Japanese, which would affect our lexical analysis). Finally, I removed all films with an unrecorded gross revenue, so as not to have any blank fields. This produced the clean version of our movie metadata, which we also loaded into pgAdmin4.
-
+    \newline \newline
     Then, using a specific SQL query (provided in the code report) we muxed the data, producing a list of ~4000 movie titles, along with their gross revenue and an average of the valence, arousal and dominance of every non-particle english word in their titles. This was the final CSV file for use in this analysis.
+    \newline \newline
 
-    \centering
-    \includegraphics[scale=0.8]{Movie_titles_by_vad}
-    Here we have a graph
+    Appendix A shows a series of histograms that count each average valance, arousal and \
+    dominance scores of each title in our dataset. On average, the titles are left tailed,\
+    indicating preference for pleasant over unpleasant. Conversely, the arousal graph is slightly\
+    left tailed, indicating less arousing than not. The dominance graph follows a roughly\
+    normal distribution, which affirms the min/max and sd tables that have been produced.
+    \newline \newline
+    Appendix B shows a series of scatter plots. The scatter plots were difficult to analyse \
+    due to the difference between the majority of the body and how extreme the outliers are. \
+    We will very likely have to produce a second series of grahs that disregard the outliers in \
+    order to get a better sense of scale. The outliers don't seem to follow the same distribution \
+    as the histograms would imply meaning there may be some interesting analysis in the future.
 
     \begin{appendices}
-        \section{Graphs}
-        Figures of graphs are going to go here.
-        \section{Something else}
-        Things that are not graphs will go here.
+        \section{Graph 1}
+        \includegraphics[scale=0.8]{Movie_titles_by_vad}
+        \section{Graph 2}
+        \includegraphics[scale=0.25]{vad_by_gross}
+        %
+        %\section{Something else}
+        %Things that are not graphs will go here.
     \end{appendices}
 \end{document}
