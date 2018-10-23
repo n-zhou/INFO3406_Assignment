@@ -2,32 +2,45 @@
 \usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
 \usepackage{graphicx}
 \usepackage{float}
+%\setcounter{tocdepth}{4}
 \graphicspath{ {./images/} }
 \begin{document}
 
   \begin{titlepage}
-      \centering
-      \title{INF3406 Assignment Stage 2}
-      \author{
-        Nick Zhou 460363707\\
-        Linzi Zhu 46xxxxxxx
-      }
-      \date{October 2018}
-      \maketitle
-      \includegraphics[width=5cm]{usyd}
+    \centering
+    \title{\textbf{INFO3406 Assignment Stage 2}}
+    \author{
+      Nick Zhou 460363707\\
+      Linzi Zhu 46xxxxxxx
+    }
+    \date{October 2018}
+    \maketitle
+    \includegraphics[width=5cm]{usyd}
   \end{titlepage}
 
+  \begin{tableofcontents}
+    \tableofcontents
+  \end{tableofcontents}
+
   \section{Section 1: Setup}
-  Hypothesis:
-  H0 (the null Hypothesis): Lexicon usage in movie titles does not have any effect on the performance of a movie.
-  H1 (the alternative Hypothesis): Lexicon usage in movie does have an effect on the performance of a movie.
-  \\\\
+    \subsection{Hypothesis}
+    % State your research question(s). State null and alternative hypotheses
+    \underline{Hypotheses}
+    \begin{itemize}
+      \item H0 (the null Hypotheses): Lexicon usage in movie titles \textit{has no effect} on the performance of a movie.
+      \item H1 (the alternative Hypotheses): Lexicon usage in movie does \textit{has an effect} on the performance of a movie.
+    \end{itemize}
+
+    \subsection{Reliability}
+    % Describe how you will quantify reliability e.g. significance testing, confidence intervals. If appropriate, describe how you will measure effectiveness e.g. regression r-square, clustering V-measure, classification f1-score.
+
+    \subsection{Dataset}
+    % Identify datasets and the data you derived from them
+
   \section{Section 2: Approach}
   Approach...
-  \\\\
   \section{Section 3: Results}
   The results to appear to indicate that...
-  \\\\
   \section{Conclusion}
   There was no evidence to support the alternative hypothesis and as a result we retain the null hypothesis\
   which is that there is effect on movie performance based on their lexicon usage in titles.
