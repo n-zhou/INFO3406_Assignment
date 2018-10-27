@@ -2,6 +2,7 @@
 \usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
 \usepackage{graphicx}
 \usepackage{float}
+\renewcommand{\baselinestretch}{1.15}
 %\setcounter{tocdepth}{4}
 \graphicspath{ {./images/} }
 \begin{document}
@@ -15,7 +16,7 @@
     }
     \date{October 2018}
     \maketitle
-    \includegraphics[width=5cm]{usyd}
+    \includegraphics[width=3.5cm]{usyd}
   \end{titlepage}
 
   \begin{tableofcontents}
@@ -66,7 +67,7 @@
     \subsection{Dataset}
     % Identify datasets and the data you derived from them
     For this dataset we combined 2 larger datasets, while trimming some extraneous information not relevant to this report. A 2011 report from the National Research Council Canada on Word-Emotion Association Lexicon - acquired from https://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm, and the IMDB5000 movie dataset, listing a huge amount of metadata related to 5000 select movies - acquired from https://github.com/Godoy/imdb-5000-movie-dataset
-    \newline \newline
+    \newline
     The Word-Emotion Association Lexicon was originally compiled by asking volunteers on Amazon's Mechanical Turk to rate a series of words, the total of which were analysed and compiled into the report by the NRC. In particular, we used the word to Valence, Arousal and Dominance report, which takes a large number of English unigrams and assigns to each a value from 0 to 1 for valence, arousal and dominance. In order -
 
     \begin{itemize}
@@ -76,9 +77,9 @@
     \end{itemize}
 
     The IMDB5000 is essentially a scrape of the IMDB database, the stats for which are all user compiled, like Wikipedia.
-    \newline \newline
+    \newline
     In our report, we take a combination of these statistics. Firstly, the titles of the films in question, stored as strings. Then the gross revenue of the film as described my IMDB, stored as an integer. Finally, we took an average of each of the valence, arousal and dominance values of each word in the corresponding titles, represented as a real number from 0-1.
-    \newline \newline
+    \newline
     %\heading{cleaning}
 
    Using a specific SQL query (provided in the Stage 1 code report) we muxed the data, producing a list of 3460 movie titles, along with their gross revenue and an average of the valence, arousal and dominance of every non-particle english word in their titles. This was the final CSV file for use in this analysis.
@@ -86,7 +87,7 @@
 Some histograms of this dataset are provided below
 
 \begin{center}
-\includegraphics[width=15cm]{Movie_titles_by_vad.png}
+\includegraphics[width=10cm]{Movie_titles_by_vad.png}
 \end{center}
 
   \section{Section 2: Approach}
@@ -104,11 +105,9 @@ Some histograms of this dataset are provided below
 The tests for linear relationship reveal something surprising. There exists a very weak linear relationship between every predictor variable and the gross box office perfomance. Both the scatterplot, a scatterplot using the square root of the gross variable (rtgross, created in order to normalise the extremely left skewed distribution, which makes the plot hard to examine) and the covariate analysis all show that (with a significance level of 0.05), there does not exist a statistically significant relationship between the dependants (valence, arousal and dominance) and the independant variable (gross).
 \newline
 \begin{center}
-	\includegraphics[width=10cm]{grosstovalence.png}
-\newline
- 	\includegraphics[width=10cm]{rtgrosstovalence.png}
-\newline
-	\includegraphics[width = 10cm]{correlations}
+	\includegraphics[width=5cm]{grosstovalence.png}
+ 	\includegraphics[width=5cm]{rtgrosstovalence.png}
+	\includegraphics[width=5cm]{correlations}
 \end{center}
 
 However, further testing proves that there does not exist a non-linear curve in the data, as all curves simply flatten out and become linear across the very low values of gross, as the distribution is extremely left-skewed, as demonstrated in the curve estimation graphs below.
@@ -116,39 +115,38 @@ However, further testing proves that there does not exist a non-linear curve in 
 With that in mind, we will continue with the linear regression analysis.
 
 \begin{center}
-	\includegraphics[width=12cm]{curve_estimation}
-	\includegraphics[width=12cm]{rtgross_curve_estimation}
+	\includegraphics[width=6cm]{curve_estimation}
+	\includegraphics[width=6cm]{rtgross_curve_estimation}
 \end{center}
 
 Using the QQ plots we can see that, while all the 3 independent variables are slightly fat tailed, they are all quite normally distributed, meaning we have multivariate normality.
 
 \begin{center}
-	\includegraphics[width=10cm]{dominanceqq}
+	\includegraphics[width=5cm]{dominanceqq}
 \end{center}
 
 Next, the predicted vs residual scatterplot indicates that our results are nowhere near homoscedatic, showing massive differences in variability.
 
 \begin{center}
-	\includegraphics[width=10cm]{homoscedasticy}
+	\includegraphics[width=5cm]{homoscedasticy}
 \end{center}
 Using the VIF values, we can see that all the VIF statistics are beneath the critical value of 3. Thus, we can conclude that our independent variables are not collinear.
 
 \begin{center}
-	\includegraphics[width=10cm]{vif}
+	\includegraphics[width=5cm]{vif}
 \end{center}
 
 Now, observing the adjusted $R^{2}$, we can see that passing a linear curve through the scatterplot produced from 4 elements with almost no correlation produces a line of best fit with almost no relation to the actual data. In this case, our adjusted $R^{2}$-Score is 0.008, indicating no linear relationship.
 
 \begin{center}
-	\includegraphics[width=10cm]{summary}
+	\includegraphics[width=5cm]{summary}
 \end{center}
 
 Finally, by comparing the predicted values from our training sample to a test sample, we can see that there is almost no relationship between the two, showing a pearson coefficient of ~0.
 \begin{center}
-	\includegraphics[width=10cm]{crossvalidation}
+	\includegraphics[width=5cm]{crossvalidation}
 \end{center}
 
-\newpage
   \section{Section 4: Conclusion}
 Due to a complete lack of evidence to show any relationship between the VAD scores of a movie's title and it's corresponding box office success, we must conclude that there was insufficient evidence to support the alternative hypothesis and as a result, we retain the null hypothesis.
 
@@ -157,16 +155,12 @@ Due to a complete lack of evidence to show any relationship between the VAD scor
 \subsection{Discussion}
 Limitations -
 The dataset is quite likely too naïve to be particularly useful. The averaging method fails to account for the fact that in English, and given n-gram is likely to be more emotionally powerful than the sum of its parts, (For instance, the sentence 'For Sale: Baby's Shoes, Never Worn' tells a whole, poignant tale with very few, common words, but it would be evaluated as quite low impact in our model) but there does not currently exist a dataset that supports emotion ratings on more than unigrams, and so that is all we can use for this particularly study.
-\newline \newline
+\newline
 Furthermore, additional factors like the value of brand recognition are not accounted for within our Dataset. A 'Spiderman' movie title would evaluate Spider and Man and provide the average for those two words, without taking into account previous connections to the name. Or in the case of "Alvin and The Chipmunks: The Squeakquel", due to the high number of nonsense words and particles, we would only evaluate the word 'Chipmunk' in the resulting average. This may have thrown off the results. In fact, movies with titles who's titles included no unigrams presented in the VAD analysis ("The Lorax" for instance), were dropped from the final set entirely. These, combined with foreign films, removed about 2000 titles from the set.
-\newline \newline
+\newline
 Movie VAD may have an effect on a movie's box office success, but only as an additional factor to ratings and advertising budget and the like. If we were to redo this project, it may be valuable to add more explanatory factors and then attempt to isolate the effect that VAD has on the movie's success, once the majority of the model is taken up by other factors.
-\newline \newline
+\newline
 Interestingly enough, there are some weak linear relationships present amongst the relationships between the average VAD of movie titles amongst themselves, as seen in the additional graphs appendix. This may be an area for future research, but beyond the scope of this project.
-
-
-
-
 
 
   \appendix
