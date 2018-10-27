@@ -1,5 +1,5 @@
 \documentclass[font=10pt]{article}
-\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
 \usepackage{graphicx}
 \usepackage{float}
 %\setcounter{tocdepth}{4}
@@ -20,6 +20,7 @@
 
   \begin{tableofcontents}
     \tableofcontents
+    \pagebreak
   \end{tableofcontents}
 
   \section{Section 1: Setup}
@@ -27,7 +28,7 @@
     % State your research question(s). State null and alternative hypotheses
       \subsubsection{Research Questions}
 
-	In any project, choosing a title can be one of the most difficult aspects, as the title is often the first thing any member of your audience knows about the material. In order to aid people in choosing better project titles, we aim to find if there was a way to mathematically model the impact that a movie title has on a film's box-office success. 
+	In any project, choosing a title can be one of the most difficult aspects, as the title is often the first thing any member of your audience knows about the material. In order to aid people in choosing better project titles, we aim to find if there was a way to mathematically model the impact that a movie title has on a film's box-office success.
 
       Specfically, the research questions we will attempt to answer is:
       \begin{enumerate}
@@ -45,7 +46,7 @@
 
     \subsection{Reliability}
     % Describe how you will quantify reliability e.g. significance testing, confidence intervals. If appropriate, describe how you will measure effectiveness e.g. regression r-square, clustering V-measure, classification f1-score.
-	As we intend to use a multiple linear regression predictor, validity and effectiveness will be measured through the following metrics. 	
+	As we intend to use a multiple linear regression predictor, validity and effectiveness will be measured through the following metrics.
 	\newline
 	\textbf{Validity}
 	 \begin{itemize}
@@ -58,9 +59,9 @@
       \end{itemize}
 	\textbf{Effectiveness}
 	\begin{itemize}
-	\item \underline{Cross Validation} Finally, to test the effectiveness of our model, we will use cross validation and the root mean squared prediction error to determine how well our model predicts data not present in the training set. 
+	\item \underline{Cross Validation} Finally, to test the effectiveness of our model, we will use cross validation and the root mean squared prediction error to determine how well our model predicts data not present in the training set.
 	\end{itemize}
-	
+
 
     \subsection{Dataset}
     % Identify datasets and the data you derived from them
@@ -110,7 +111,7 @@ The tests for linear relationship reveal something surprising. There exists a ve
 	\includegraphics[width = 10cm]{correlations}
 \end{center}
 
-However, further testing proves that there does not exist a non-linear curve in the data, as all curves simply flatten out and become linear across the very low values of gross, as the distribution is extremely left-skewed, as demonstrated in the curve estimation graphs below. 
+However, further testing proves that there does not exist a non-linear curve in the data, as all curves simply flatten out and become linear across the very low values of gross, as the distribution is extremely left-skewed, as demonstrated in the curve estimation graphs below.
 
 With that in mind, we will continue with the linear regression analysis.
 
@@ -136,28 +137,28 @@ Using the VIF values, we can see that all the VIF statistics are beneath the cri
 	\includegraphics[width=10cm]{vif}
 \end{center}
 
-Now, observing the adjusted $R^{2}$, we can see that passing a linear curve through the scatterplot produced from 4 elements with almost no correlation produces a line of best fit with almost no relation to the actual data. In this case, our adjusted $R^{2}$-Score is 0.008, indicating no linear relationship. 
+Now, observing the adjusted $R^{2}$, we can see that passing a linear curve through the scatterplot produced from 4 elements with almost no correlation produces a line of best fit with almost no relation to the actual data. In this case, our adjusted $R^{2}$-Score is 0.008, indicating no linear relationship.
 
 \begin{center}
 	\includegraphics[width=10cm]{summary}
 \end{center}
 
-Finally, by comparing the predicted values from our training sample to a test sample, we can see that there is almost no relationship between the two, showing a pearson coefficient of ~0. 
+Finally, by comparing the predicted values from our training sample to a test sample, we can see that there is almost no relationship between the two, showing a pearson coefficient of ~0.
 \begin{center}
 	\includegraphics[width=10cm]{crossvalidation}
 \end{center}
 
 \newpage
   \section{Section 4: Conclusion}
-Due to a complete lack of evidence to show any relationship between the VAD scores of a movie's title and it's corresponding box office success, we must conclude that there was insufficient evidence to support the alternative hypothesis and as a result, we retain the null hypothesis. 
+Due to a complete lack of evidence to show any relationship between the VAD scores of a movie's title and it's corresponding box office success, we must conclude that there was insufficient evidence to support the alternative hypothesis and as a result, we retain the null hypothesis.
 
 \textbf{The emotional impact of the lexicon used in movie titles \textit{does not have a statistically significant effect} on the box-office performance of a movie in gross revenue.}
 
 \subsection{Discussion}
-Limitations - 
-The dataset is quite likely too naïve to be particularly useful. The averaging method fails to account for the fact that in English, and given n-gram is likely to be more emotionally powerful than the sum of its parts, (For instance, the sentence 'For Sale: Baby's Shoes, Never Worn' tells a whole, poignant tale with very few, common words, but it would be evaluated as quite low impact in our model) but there does not currently exist a dataset that supports emotion ratings on more than unigrams, and so that is all we can use for this particularly study.  
+Limitations -
+The dataset is quite likely too naïve to be particularly useful. The averaging method fails to account for the fact that in English, and given n-gram is likely to be more emotionally powerful than the sum of its parts, (For instance, the sentence 'For Sale: Baby's Shoes, Never Worn' tells a whole, poignant tale with very few, common words, but it would be evaluated as quite low impact in our model) but there does not currently exist a dataset that supports emotion ratings on more than unigrams, and so that is all we can use for this particularly study.
 \newline \newline
-Furthermore, additional factors like the value of brand recognition are not accounted for within our Dataset. A 'Spiderman' movie title would evaluate Spider and Man and provide the average for those two words, without taking into account previous connections to the name. Or in the case of "Alvin and The Chipmunks: The Squeakquel", due to the high number of nonsense words and particles, we would only evaluate the word 'Chipmunk' in the resulting average. This may have thrown off the results. In fact, movies with titles who's titles included no unigrams presented in the VAD analysis ("The Lorax" for instance), were dropped from the final set entirely. These, combined with foreign films, removed about 2000 titles from the set. 
+Furthermore, additional factors like the value of brand recognition are not accounted for within our Dataset. A 'Spiderman' movie title would evaluate Spider and Man and provide the average for those two words, without taking into account previous connections to the name. Or in the case of "Alvin and The Chipmunks: The Squeakquel", due to the high number of nonsense words and particles, we would only evaluate the word 'Chipmunk' in the resulting average. This may have thrown off the results. In fact, movies with titles who's titles included no unigrams presented in the VAD analysis ("The Lorax" for instance), were dropped from the final set entirely. These, combined with foreign films, removed about 2000 titles from the set.
 \newline \newline
 Movie VAD may have an effect on a movie's box office success, but only as an additional factor to ratings and advertising budget and the like. If we were to redo this project, it may be valuable to add more explanatory factors and then attempt to isolate the effect that VAD has on the movie's success, once the majority of the model is taken up by other factors.
 \newline \newline
